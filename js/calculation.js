@@ -12,24 +12,30 @@
 // Making claculate button clickable
 document.getElementById('calculate-btn').addEventListener('click', function(){
     // const mainIncomeBalance = getInputValue()
+
+    //Get Main Balane 
      const mainBalanceText = document.getElementById('main-balance');
      const mainBalanceNum = mainBalanceText.value;
      const mainBalance = parseInt(mainBalanceNum);
      mainBalanceText.value = '';
      console.log(mainBalance);
 
-
+    //Get food fild value
      const foodBillText = document.getElementById('food-bill');
      const foodBillNum  = foodBillText.value;
      const foodBill = parseInt(foodBillNum);   
      foodBillText.value = '';
     //  console.log(foodBill);
 
+    //get rent fild value
+
      const rentBillText = document.getElementById('rent-bill');
      const rentBillNum  = rentBillText.value;
      const rentBill = parseInt(rentBillNum);   
      rentBillText.value = '';
     //  console.log(rentBill);
+
+    // get colthes fild value
 
      const clothesBillText = document.getElementById('clothes-bill');
      const clothesBillNum  = clothesBillText.value;
