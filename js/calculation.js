@@ -1,5 +1,7 @@
 // Starting js 
 
+//Function for all input
+
 function getInputValue(inputId){
     const inputBalanceText = document.getElementById(inputId);
     const inputBalanceNum = inputBalanceText.value;
@@ -8,6 +10,26 @@ function getInputValue(inputId){
      return inputBalance;
      
 }
+
+//Function for calculation
+
+function getCalculationValue(calculation){
+
+    if(calculation == 'total-expenses'){
+        const totalCost = foodCost + rentCost + clothesCost;
+        totalExpensestext.innerText = totalCost;
+        return totalCost;
+    }
+    if(calculation == 'balance'){
+        const balance =  mainIncomeBalance - totalCost;
+        balanceText.innerText = balance;
+        return balance;
+    }
+
+}
+
+
+
 
 // Making claculate button clickable
 document.getElementById('calculate-btn').addEventListener('click', function(){
@@ -49,16 +71,21 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
 
     const clothesCost = getInputValue('clothes-bill')
 
-     const totalExpensestext = document.getElementById('total-expenses');
-     const totalExpenses = parseInt (totalExpensestext.innerText);
-     const totalCost = foodCost + rentCost + clothesCost;
-     console.log(totalCost);
-     totalExpensestext.innerText = totalCost;
 
-    const balanceText = document.getElementById('balance');
-    const balance =  mainIncomeBalance - totalCost;
-    balanceText.innerText = balance;
-    console.log(balance);
+
+        const allCalculation = getCalculationValue('total-expenses');
+        const allCalculation = getCalculationValue('balance');
+
+        // const totalExpensestext = document.getElementById('total-expenses');
+        // const totalExpenses = parseInt (totalExpensestext.innerText);
+        // const totalCost = foodCost + rentCost + clothesCost;
+        // console.log(totalCost);
+        // totalExpensestext.innerText = totalCost;
+
+        // const balanceText = document.getElementById('balance');
+        // const balance =  mainIncomeBalance - totalCost;
+        // balanceText.innerText = balance;
+        // console.log(balance);
     // const balanceRemains = balance - totalExpenses;
     // balanceText.innerText = balanceRemains;
 
