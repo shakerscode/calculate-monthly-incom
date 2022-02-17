@@ -28,14 +28,16 @@ function getCalculationValue(calculation, foodCost, rentCost, clothesCost,  main
       
     }
     else if (isNaN(foodCost) || isNaN(rentCost) || isNaN(clothesCost)){
-        return alert('Please enter a valid number');
+        return alert("Please don't enter Alphabet word. Enter a valid number");
     }
     
-     
     const totalCost = foodCost + rentCost + clothesCost;
     if(calculation == 'total-expenses'){
         document.getElementById('total-expenses').innerText = totalCost;
         return totalCost;
+    }
+    else if(totalCost > mainIncomeBalance){
+        return alert('You do not have sufficient balance.');
     }
     else if(calculation == 'balance'){
         const balance =  mainIncomeBalance - totalCost;
