@@ -7,11 +7,15 @@ function getInputValue(inputId){
     const inputBalanceNum = inputBalanceText.value;
     const inputBalance = parseInt(inputBalanceNum);
     inputBalanceText.value = '';
+    if(inputBalance == -1){
+        return;
+    } 
      return inputBalance;
      
 }
 
 //Function for calculation
+
 
 function getCalculationValue(calculation){
 
@@ -20,7 +24,7 @@ function getCalculationValue(calculation){
         totalExpensestext.innerText = totalCost;
         return totalCost;
     }
-    if(calculation == 'balance'){
+    else if(calculation == 'balance'){
         const balance =  mainIncomeBalance - totalCost;
         balanceText.innerText = balance;
         return balance;
@@ -29,12 +33,29 @@ function getCalculationValue(calculation){
 }
 
 
+ 
+
+
 
 
 // Making claculate button clickable
 document.getElementById('calculate-btn').addEventListener('click', function(){
-    const mainIncomeBalance = getInputValue('main-balance')
-    console.log(mainIncomeBalance);
+        const mainIncomeBalance = getInputValue('main-balance')
+
+        
+         
+
+        // if (foodCost == 0 && foodCost == ''){
+        //     error.style.display = 'block';
+        // }
+        // else if (rentCost == 0 && rentCost == ''){
+        //     error.style.display = 'block';
+        // }
+        
+        // else if (clothesCost == 0 && clothesCost == ''){
+        //     error.style.display = 'block';
+        // }
+        
 
     //Get Main Balane 
     //  const mainBalanceText = document.getElementById('main-balance');
@@ -49,7 +70,7 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
     //  const foodBill = parseInt(foodBillNum);   
     //  foodBillText.value = '';
     //  console.log(foodBill);
-    const foodCost = getInputValue('food-bill')
+        const foodCost = getInputValue('food-bill')
 
     //get rent fild value
 
@@ -59,7 +80,7 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
     //  rentBillText.value = '';
     //  console.log(rentBill);
 
-    const rentCost = getInputValue('rent-bill')
+         const rentCost = getInputValue('rent-bill')
 
     // get colthes fild value
 
@@ -69,10 +90,7 @@ document.getElementById('calculate-btn').addEventListener('click', function(){
     //  clothesBillText.value = '';
     //  console.log(clothesBill);
 
-    const clothesCost = getInputValue('clothes-bill')
-
-
-
+        const clothesCost = getInputValue('clothes-bill')
         const allCalculation = getCalculationValue('total-expenses');
         const allCalculation = getCalculationValue('balance');
 
