@@ -22,7 +22,7 @@ function getInputValue(inputId){
 
 function getCalculationValue(calculation, foodCost, rentCost, clothesCost,  mainIncomeBalance){
    
-    
+    //applying condition
     if(calculation < 0 || foodCost < 0 || rentCost < 0 || clothesCost < 0){
         return alert('Please enter a valid number');
       
@@ -78,6 +78,10 @@ document.getElementById('saving-btn').addEventListener('click', function(){
     const savedAmmountNum= savedAmountTextIs.innerText;
     const savedAmount = parseInt(savedAmmountNum);
     savedAmountTextIs.innerText = parseInt(savingAmmountTotal);
+
+    if(savingAmmountTotal > balance.innerText){
+        return alert('You do not have sufficent balance')
+    }
 
     const remainBalnaceText = document.getElementById('remaining-balance');
     const remainBalnaceValue = remainBalnaceText.innerText;
